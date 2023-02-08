@@ -1,14 +1,11 @@
 package com.vm.astonmartin.pages;
 
 import com.vm.astonmartin.domain.UserData;
-import com.vm.astonmartin.driver.DriverSingleton;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 
 public class MainPage extends BasePage{
+    public final String CALCULATE_PAYMENT = "CALCUlATE PAYMENT";
     @FindBy(xpath = "//nav[@class='header-desktop_navigation__PdYWM']/div[2]/a/span")
     private WebElement namePreOwnedVehiclesOnMainPage;
     @FindBy(xpath = "//div[@class='cookie_actions__pm7_S']/button")
@@ -31,6 +28,12 @@ public class MainPage extends BasePage{
     private WebElement nameZipCodeOnPageCustomizeYourPayment;
     @FindBy(xpath = "//button[@class='styles_button__2CcKk finance-calculator_submitButton__kgiYd styles_primary__LOVSi']")
     private WebElement buttonNextOnPageCustomizeYourPayment;
+    @FindBy(xpath = "//h4[@class='personal-code_title__Caf1I']")
+    private WebElement namePersonalUnlockCodeSent;
+    @FindBy(xpath = "//label[@class='styles_label__bJz3l']")
+    private WebElement nameCode;
+    @FindBy(xpath = "//div[@id='__next']/section/div/section[2]/button/span")
+    private WebElement nameCalculatePayment;
 
     public void clickPreOwnedVehicles(){
         namePreOwnedVehiclesOnMainPage.click();
@@ -74,6 +77,10 @@ public class MainPage extends BasePage{
 
     public void clickButtonNext(){
         buttonNextOnPageCustomizeYourPayment.click();
+    }
+
+    public String getTextCalculatePayment(){
+        return nameCalculatePayment.getText();
     }
 }
 

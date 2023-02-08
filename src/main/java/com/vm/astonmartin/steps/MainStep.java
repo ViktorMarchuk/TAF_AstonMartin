@@ -10,7 +10,7 @@ public class MainStep extends MainPage{
         clickPreOwnedVehicles();
         clickImagineOfTheFirstCarOnSecondPage();
         clickNameCustomizePaymentOnThirdPage();
-        getIframe();
+        getIframe(0);
         inputFirstName();
         inputLastName();
         clickOnTheFieldPreferredContact();
@@ -19,5 +19,6 @@ public class MainStep extends MainPage{
         inputZipCodeOnPageCustomizeYourPayment();
         clickButtonNext();
         leaveIframe();
+        getIframe(0);
     }
 }

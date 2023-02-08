@@ -18,8 +18,8 @@ public class BasePage{
         driver = DriverSingleton.getDriver();
         driver.navigate().to(URL);
     }
-    public void getIframe(){
-        driver.switchTo().frame(0);
+    public void getIframe(int levelIframe){
+        driver.switchTo().frame(levelIframe);
     }
     public void leaveIframe(){
         driver.switchTo().defaultContent();
