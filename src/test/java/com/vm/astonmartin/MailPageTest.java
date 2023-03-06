@@ -5,12 +5,13 @@ import com.vm.astonmartin.steps.MailStep;
 import org.testng.annotations.Test;
 
 public class MailPageTest{
+    MailStep mailStep = new MailStep();
+
     @Test
     public void testMailPage(){
-        MailStep step=new MailStep();
-        MailPage page=new MailPage();
-        step.actionOnMailPage();
-        System.out.println( page.getTextFromArray());
-
+        MailPage page = new MailPage();
+        mailStep.actionMailPage();
+        String password = page.getTextFromArray();
+        System.out.println(password);
     }
 }

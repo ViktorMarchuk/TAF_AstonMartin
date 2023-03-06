@@ -1,13 +1,15 @@
 package com.vm.astonmartin.pages;
 
 import com.vm.astonmartin.domain.UserData;
+import com.vm.astonmartin.steps.MailStep;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.ArrayList;
 
 public class HomePage extends BasePage{
-    MailPage mailPage=new MailPage();
+    MailPage mailPage = new MailPage();
     public final String CALCULATE_PAYMENT = "CALCUlATE PAYMENT";
     public final String FIRST_NAME = "First Name *";
     public final String LAST_NAME = "Last Name *";
@@ -55,8 +57,10 @@ public class HomePage extends BasePage{
     private WebElement nameCode;
     @FindBy(xpath = "//div[@id='__next']/section/div/section[2]/button/span")
     private WebElement nameCalculatePayment;
-    @FindBy(xpath = "//div[@id=\"__next\"]/section/div/section[2]/div/div/input")
+    @FindBy(xpath = "//*[@id=\"__next\"]/section/div/section[2]/div/div/input")
     private WebElement fieldCodeOnPopupPersonalUnlockCodeSent;
+    @FindBy(xpath = "//button[@name=\"submitPersonalCode\"]")
+    private WebElement buttonCalculatePaymentPopUpPersonalUnlockCodeSent;
 
     public void clickPreOwnedVehicles(){
         namePreOwnedVehiclesOnMainPage.click();
@@ -129,8 +133,13 @@ public class HomePage extends BasePage{
     public String getTextZipCode(){
         return nameZipCodeOnPageCustomizeYourPayment.getText();
     }
+
     public void inputTextToFieldCodeOnPopupPersonalUnlockCodeSent(String s){
         fieldCodeOnPopupPersonalUnlockCodeSent.sendKeys(s);
+    }
+
+    public void clickButtonCalculatePaymentPopUpPersonalUnlockCodeSent(){
+        buttonCalculatePaymentPopUpPersonalUnlockCodeSent.click();
     }
 
     public ArrayList <String> actualResult(){

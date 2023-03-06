@@ -7,7 +7,7 @@ import java.time.Duration;
 
 public class DriverSingleton{
     private static WebDriver driver;
-    private final static int WAIT_TIME = 10;
+    private final static int WAIT_TIME = 15;
 
     public DriverSingleton(){
     }

@@ -4,8 +4,10 @@ package com.vm.astonmartin.steps;
 import com.vm.astonmartin.pages.MailPage;
 
 public class MailStep extends MailPage{
-    public void actionOnMailPage(){
+
+    public void actionMailPage(){
         openPage(URL_MAIL_PAGE);
+        clickButtonEnter();
         getExplicitlyWaiter(getFieldForInputEmail(), 7);
         inputEmail();
         clickButtonNextOnPageWithEmail();
@@ -15,5 +17,9 @@ public class MailStep extends MailPage{
         clickButtonPauseMobileNotifications();
         inputToFieldSearchInMail();
         clickFieldSearch();
+    }
+    public void actionOpenMail(){
+        clickButtonSelectAllLetters();
+        clickButtonMarkAsRead();
     }
 }
